@@ -187,7 +187,7 @@ This is the final dataset I got before I started modeling:
 
   ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev3.PNG)
 
-  (Year similarly grouped into 4 ranges like Price but by Earliest, Mid-Early, Mid-Recent, Recent for its heatmap)
+  (Year similarly grouped into 4 ranges like Price but by Earliest, Mid-Early, Mid-Recent, and Recent for its heatmap)
   
   ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev4.PNG)  
 
