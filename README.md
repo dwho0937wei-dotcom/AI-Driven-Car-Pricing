@@ -107,6 +107,61 @@ This is the final dataset I got before I started modeling:
   
   ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo1.PNG)
   
+  and its feature importance being
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo2.PNG)
+
+  #### Ridge Regression Model
+  ```python
+  from sklearn.linear_model import Ridge
+  ```
+  with RMSE and MAE being
+  
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo3.PNG)
+
+  and its feature importance being
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo4.PNG)
+
+  #### Lasso Regression Model
+  ```python
+  from sklearn.linear_model import Lasso
+  ```
+  with RMSE and MAE being
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo5.PNG)  
+
+  and its feature importance being
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo6.PNG)
+
+  #### Random Forest Regressor
+  ```python
+  from sklearn.ensemble import RandomForestRegressor
+  ```
+  with RMSE and MAE being
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo7.PNG)
+
+  and its feature importance being
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo8.PNG)
+
+  #### XGBoost Model
+  ```python
+  import xgboost as xgb
+  ```
+  which required an installation on JupyterNotebook using:
+  ```python
+  pip install xgboost
+  ```
+  with RMSE and MAE being
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo9.PNG)
+
+  and its feature importance being
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo10.PNG)
 
 ### Evaluation
 
