@@ -2,7 +2,7 @@
 
 ## Summary Findings
 
-### Business Understanding
+### Business Understanding (BU)
   As per the overview, our business objective is to find and understand factors that would make a car more or less expensive.
   
   When putting it into data perspective, the factors are the columns in which we can also call them features and our targeted feature would be the column price.
@@ -11,7 +11,7 @@
   ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/BU1.PNG)
 
 
-### Data Understanding
+### Data Understanding (DU)
   For the Data Understanding, I personally interpret what each column in the dataset represent.
 
   1. id - the label of the car
@@ -41,10 +41,71 @@
   
   with the DataFrame's shape (426880, 18) showing that some columns have a significant part of its data missing.
   
-### Data Preparation
-  For the Data Preparation, I first 
+### Data Preparation (DP)
+  For the Data Preparation, I first logically concluded that it wouldn't make any sense for the car's id and VIN to be able to associate with the car's price value and thus I dropped them.
 
-### Modeling
+  Because there are significant numbers of missing values, I decided to use an imputer to fill in missing values rather than to get rid of them all as that will sacrifice most of the data. I tried using various imputers like:
+  #### KNNImputer
+  ```python
+  from sklearn.impute import KNNImputer
+  ```
+  #### KNN
+  ```python
+  from fancyimpute import KNN
+  ```
+  which required an installation into my Anaconda prompt using:
+  ```python
+  conda install -c conda-forge fancyimpute
+  ```
+  #### IterativeImputer
+  ```python
+  from sklearn.experimental import enable_iterative_imputer
+  from sklearn.impute import IterativeImputer
+  ```
+  #### fast_knn
+  ```python
+  from impyute.imputation.cs import fast_knn
+  ```
+  which required another installation but in my JupyterNotebook using:
+  ```python
+  pip install impyute
+  ```
+but all of them either cannot handle categorical data or required categorical encoding in which when input in the imputer, the imputer will run for a long time.
+
+Thus, I stuck with the 
+#### SimpleImputer 
+```python
+from sklearn.impute import SimpleImputer
+```
+whose hyperparameter I set to 'most_frequent' meaning all missing values shall be replaced by the frequent values of its respective column.
+
+I also noticed that some price values are 0 which didn't make any sense because cars including used ones aren't supposed to be free so I replaced them all with the median price value of all nonzero price values.
+
+This is the final dataset I got before I started modeling:
+![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/DP1.PNG)
+
+### Modeling (Mo)
+  Before modeling, I of course train_test_split my data with hyperparameter test_size set to 0.3, i.e. 0.7:0.3 (Train:Test) and hyperparameter random_state set to 1.
+  I then categorically encoded the final dataset with the CatBoostEncoder after importing from:
+  ```python
+  from category_encoders import CatBoostEncoder
+  ```
+  in which I need to personally install in my Anaconda prompt using:
+  ```python
+  conda install -c conda-forge category_encoders
+  ```
+  It turns out I then decided to use this as a final encoded dataset for all 5 models that I'm about to experiment on. They are:
+  #### CatBoostRegressor
+  ```python
+  from catboost import CatBoostRegressor
+  ```
+  in which I need to install in JupyterNotebook using:
+  ```python
+  pip install catboost
+  ```
+  with its Root-Squared-Mean-Error (RMSE) and Mean-Absolute-Error (MAE) being
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo1.PNG)
+  
 
 ### Evaluation
 
