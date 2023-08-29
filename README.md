@@ -1,5 +1,8 @@
 # Module11_Project
 
+#### My Relevant JupyterNotebook
+https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/prompt_II_Daniel-Ho.ipynb
+
 ## Summary Findings
 
 ### Business Understanding (BU)
@@ -220,7 +223,3 @@ According to my model, the paint color of the car should be the first factor the
 Next up would be the year that the car was manufactured. It would seem that the more recent the car has been       manufactured, then the more chances the car will have to be highly valued or have a high price. Thus, if you want  used cars that are highly valued, look for less old-fashioned and more recent trendy ones.
 
 The last is the condition of the car. I cannot explain to them why cars that are in like-new or new conditions are not highly valued but I will sure tell them to also avoid ones in salvage condition, i.e. used cars that are no    longer roadworthy and cannot be repaired. Used cars that are either in fair, good, or excellent conditions however are what consumers highly valued. Thus, make sure to look after your used cars if you want your consumers to buy    them at a high price.
-
-
-#### My Relevant JupyterNotebook
-https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/prompt_II_Daniel-Ho.ipynb 
