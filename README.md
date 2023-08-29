@@ -183,7 +183,7 @@ This is the final dataset I got before I started modeling:
 
   showing that cars that were either colored green, silver, or white have the possibility of being highly priced. The black cars only have the possibility of being medium-low priced at max with all the other unspecified colored cars being only on the low priced range.
 
-  For Year, we have
+  For Year (similarly grouped into 4 ranges like Price but by Earliest, Mid-Early, Mid-Recent, Recent), we have
 
   ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev3.PNG)
   ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev4.PNG)  
