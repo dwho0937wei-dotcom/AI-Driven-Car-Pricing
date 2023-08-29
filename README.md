@@ -104,6 +104,7 @@ This is the final dataset I got before I started modeling:
   pip install catboost
   ```
   with its Root-Squared-Mean-Error (RMSE) and Mean-Absolute-Error (MAE) being
+  
   ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo1.PNG)
   
 
