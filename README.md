@@ -163,6 +163,62 @@ This is the final dataset I got before I started modeling:
 
   ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo10.PNG)
 
-### Evaluation
+### Evaluation (Ev)
+  After comparing all the RMSES and MAES of all five models, I came to the conclusion that the Random Forest Regressor will be the best model because it has the lowest MAE compared to the other 4 models.
+  I then rely on its feature importance
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Mo8.PNG)
+
+  to conclude that the paint_color, condition, and year are the top three features that are the most impactful to the price of the car.
+
+  However, the feature importance cannot tell us on whether they increase or decrease the price of the car. Thus, I relyed on scatterplot and heatmap for each feature. For the sake of not overwhelming the heatmap with numerous different price values, I've assigned all the price values to either Low, Medium-Low, Medium-High, or High in which they represent the four equidistant ranges of all different numeric price values. Note that none of the price values were assigned to Medium-High as the heatmaps below will imply.
+
+  For Paint Color, we have
+  
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev1.PNG)
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev2.PNG)
+
+  showing that cars that were either colored green, silver, or white have the possibility of being highly priced. The black cars only have the possibility of being medium-low priced at max with all the other unspecified colored cars being only on the low priced range.
+
+  For Year, we have
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev3.PNG)
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev4.PNG)  
+
+  showing that the more recent the cars have been manufactured, the more possibility they have of being highly priced.
+
+  For Condition, we have
+
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev5.PNG)
+  ![alt text](https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/images/Ev6.PNG)    
+
+  showing that cars in either fair, good, or excellent condition has the possibility of being highly priced although the majority of them are still low priced. Still better than the other conditions in which all of them are low priced.
+
+  #### Business or Data Issues
+Keep in mind that before the models were used, many categorical NaN values were replaced by frequent values of its respective column and the majority of prices that were initially 0 were changed into median prices. Thus, it can be said that the same-value presence in the modified car dataset is significant enough to make the dataset inaccurate, bias, and/or less credible.
+
+There may be other ways to fix these very noticeable issues but unfortunately, I no longer have the time to find any. Thus, we are moving on to the Deployment with the Random Forest Regressor remaining as the best model.
+
 
 ### Deployment
+#### How will the model work when deployed
+
+To start off, this model can be deployed as a form of the car dealers' inventory that they can input car datasets  of their own with similar structures as my given one, i.e. each row represents an individual car and there can be  numerous features about the car in which one of the features has to be the price of the car in order for this model to work.
+
+It is highly recommended that the dataset has no missing values nor values that won't make any sense in a real-life scenario. Otherwise, if the model detect any missing/nonsensical values, then the model will automatically fill    them in with frequent values for categorical features or with a median value for numeric features using            SimpleImputer.
+
+The model will use CatBoost Encoder to encode the dataset and before using its best model Random Forest Regressor, it will ask the car dealer to choose a number from 2 to 12 telling the dealer that it represents a range from fast but probably inaccurate results to more slow but more accurate results. After the car dealer chose the number, that number will be input into the hyperparameter n_estimators of the Random Forest Regressor.
+
+Once these three features are found, it will then create a scatterplot and a heatmap for each feature for the car  dealer to see. It will interpret what the scatterplot and the heatmap meant for that specific feature relating to  price. Also, to avoid the heatmap from being overwhelmed with numerous different numeric values, the model will    automatically use np.linspace and pd.cut to create a new column with four categorical bins covering four equal     ranges of all different numeric values to have these four be the labels for the heatmap instead of the overwhelming different numeric values.
+
+#### My findings interpreted to clients
+
+Before delivering my findings to the car dealers, I will first let them know that there were many                  missing/nonsensical values in my dataset which are replaced by the most frequent or median values of its respective feature so my findings may be bias to that regard.
+
+According to my model, the paint color of the car should be the first factor they should keep in mind when it comes to the price of the car. I will specifically tell them that there's a slim chance that consumers highly value      green, silver, and white cars with black cars being the secondary best. The rest of the colors seemed to be          completely lowly valued according to its price.
+
+Next up would be the year that the car was manufactured. It would seem that the more recent the car has been       manufactured, then the more chances the car will have to be highly valued or have a high price. Thus, if you want  used cars that are highly valued, look for less old-fashioned and more recent trendy ones.
+
+The last is the condition of the car. I cannot explain to them why cars that are in like-new or new conditions are not highly valued but I will sure tell them to also avoid ones in salvage condition, i.e. used cars that are no    longer roadworthy and cannot be repaired. Used cars that are either in fair, good, or excellent conditions however are what consumers highly valued. Thus, make sure to look after your used cars if you want your consumers to buy    them at a high price.
+
+
