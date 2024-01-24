@@ -1,4 +1,4 @@
-# Module11_Project
+# AI-Driven Car Pricing
 
 #### My Relevant JupyterNotebook
 https://github.com/dwho0937wei-dotcom/Module11_Project/blob/main/prompt_II_Daniel-Ho.ipynb
